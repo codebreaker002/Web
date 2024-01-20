@@ -1,0 +1,70 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Web App</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Top 20 Customers</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>CustomerID</th>
+        <th>NameStyle</th>
+        <th>Title</th>
+        <th>FirstName</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>Suffix</th>
+        <th>CompanyName</th>
+        <th>SalesPerson</th>
+        <th>EmailAddress</th>
+        <th>Phone</th>
+        <th>PasswordHash</th>
+        <th>PasswordSalt</th>
+        <th>rowguid</th>
+        <th>ModifiedDate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% customers.forEach(customer => { %>
+        <tr>
+          <td><%= customer.CustomerID %></td>
+          <td><%= customer.NameStyle %></td>
+          <td><%= customer.Title %></td>
+          <td><%= customer.FirstName %></td>
+          <td><%= customer.MiddleName %></td>
+          <td><%= customer.LastName %></td>
+          <td><%= customer.Suffix %></td>
+          <td><%= customer.CompanyName %></td>
+          <td><%= customer.SalesPerson %></td>
+          <td><%= customer.EmailAddress %></td>
+          <td><%= customer.Phone %></td>
+          <td><%= customer.PasswordHash %></td>
+          <td><%= customer.PasswordSalt %></td>
+          <td><%= customer.rowguid %></td>
+          <td><%= customer.ModifiedDate %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

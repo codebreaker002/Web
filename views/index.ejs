@@ -1,0 +1,139 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Assignment </title>
+    <script>
+        window.onload = function () {
+            let slide = document.querySelector(".toggler");
+            let bck = document.getElementById("bckbtn");
+            let fwd = document.getElementById("fwdbtn");
+            slide.addEventListener("wheel", (evt) => {
+                evt.preventDefault(); slide.scrollLeft += evt.deltaY;
+            });
+            fwd.addEventListener("click", () => { slide.scrollLeft += 900; });
+            bck.addEventListener("click", () => { slide.scrollLeft -= 900; });
+        };
+    </script>
+    <style>
+      *{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    width: 100%;
+    height: 85px;
+    line-height: 75px;
+    padding: 10px 50px;
+    position: fixed;
+    background-image: linear-gradient(#033747,#012733);
+}
+nav .logo p{
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+} 
+nav ul{
+    float: right;
+}
+nav li{
+    display: inline-block;
+    list-style: none;
+    /* padding: 20px 0px; */
+}
+nav li a{
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0px 30px;
+    color: white;
+    text-decoration: none;
+}
+.toggler {
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+    /* padding-left: 50px; */
+}
+.toggler div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    padding-right: 10px;
+    flex: none;
+}
+.toggler div img{
+    width: 100%;
+    filter: grayscale(100);
+    transition: transform 0.5s;
+}
+.toggler::-webkit-scrollbar{
+    display: none;
+}
+.toggler-wrapper{
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0% 100px;
+}
+#bckbtn, #fwdbtn{
+    width: 50px;
+    cursor: pointer;
+    margin: 40px;
+}
+.toggler div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+    </style>
+
+</head>
+
+<body>
+    <!-- <script src="app.js"></script> -->
+    <nav>
+        <div class="logo">
+            <p>NavBar</p>
+        </div>
+        <ul>
+            <li><a href="/">Task1</a></li>
+            <li><a href="task2">Task2</a></li>
+            <li><a href="task3">Task3</a></li>
+        </ul>
+    </nav>
+    <div class="toggler-wrapper">
+
+        <img src="https://cdn.pixabay.com/photo/2016/09/05/10/50/app-1646213_640.png" id="bckbtn">
+        <div class="toggler">
+            <div>
+                <span><img src="https://media.istockphoto.com/id/1404885250/photo/mahabaleshwar-and-panchagani-nature-and-hill-areas.jpg?s=2048x2048&w=is&k=20&c=Su2wYszfDTThmt7AcCA5OHfGcqFVBxy73W-5YtemT28="></span>
+            </div>
+            <div>
+                <span><img src="https://media.istockphoto.com/id/636208094/photo/tropical-jungle.jpg?s=2048x2048&w=is&k=20&c=MlaHtCKbmmQAzT5d0Z-Hs8gw_yjzEar-jwMoE85Nzj8="></span>
+            </div>
+            <div>
+                <span><img src="https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_1280.jpg"></span>
+            </div>
+
+        </div>
+        <img src="https://media.istockphoto.com/id/1093587922/vector/arrow-line-vector-icon-on-white-background.jpg?s=2048x2048&w=is&k=20&c=cT0_JnM8t1DwB-xWPhZ0DGJBnw9f0OacLMixBr5HRkU=" id="fwdbtn">
+        
+
+    </div>
+</body>
+
+</html>
